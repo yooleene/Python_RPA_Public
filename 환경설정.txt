@@ -1,0 +1,12 @@
+1.주피터노트북 설치
+pip install jupyter --trusted-host pypi.org --trusted-host files.pythonhosted.org
+
+2.패키지 설치
+pip install pandas pyautogui clipboard datetime pywinauto selenium bs4 requests opencv-python pillow openpyxl dataframe_image --trusted-host pypi.org --trusted-host files.pythonhosted.org
+
+3.activate() 에러시 대안 
+import pywinauto #설치 필요
+win = pg.getWindowsWithTitle("제목 없음")[0]
+pywinauto.application.Application().connect(handle=win._hWnd).top_window().set_focus()
+pg.sleep(1)
+win.activate()
